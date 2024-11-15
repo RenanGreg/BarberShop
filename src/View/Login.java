@@ -5,17 +5,25 @@
  */
 package View;
 
+import Controller.LoginController;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author adm
  */
 public class Login extends javax.swing.JFrame {
 
+    private final LoginController controller;
+
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        controller = new LoginController(this);
     }
 
     /**
@@ -27,6 +35,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BotaoEntrar = new javax.swing.JButton();
         TextUsuario = new javax.swing.JTextField();
         TextSenha = new javax.swing.JPasswordField();
         LOGIN = new javax.swing.JLabel();
@@ -36,29 +45,43 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(TextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 100, -1));
-        getContentPane().add(TextSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 480, 100, -1));
+
+        BotaoEntrar.setText("ENTRAR");
+        BotaoEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoEntrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotaoEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 580, 90, 30));
+        getContentPane().add(TextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 510, 150, -1));
+        getContentPane().add(TextSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 550, 150, -1));
 
         LOGIN.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         LOGIN.setForeground(new java.awt.Color(255, 255, 255));
         LOGIN.setText("LOGIN");
-        getContentPane().add(LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 110, 40));
+        getContentPane().add(LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 110, 40));
 
         USUARIO.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         USUARIO.setForeground(new java.awt.Color(255, 255, 255));
         USUARIO.setText("usuario");
-        getContentPane().add(USUARIO, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 60, 30));
+        getContentPane().add(USUARIO, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, 60, 30));
 
         SENHA.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         SENHA.setForeground(new java.awt.Color(255, 255, 255));
         SENHA.setText("senha");
-        getContentPane().add(SENHA, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, 60, 40));
+        getContentPane().add(SENHA, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 520, 50, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/projeto.jpeg"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 950, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEntrarActionPerformed
+        // executa quando clico no botao
+        this.controller.FizTarefa();
+       
+    }//GEN-LAST:event_BotaoEntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,6 +113,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoEntrar;
     private javax.swing.JLabel LOGIN;
     private javax.swing.JLabel SENHA;
     private javax.swing.JPasswordField TextSenha;
@@ -97,4 +121,26 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel USUARIO;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
+
+    public void exibeMensagem(String mensagem) {
+        JOptionPane.showMessageDialog(null, mensagem); 
+    }
+
+    public JPasswordField getTextSenha() {
+        return TextSenha;
+    }
+
+    public void setTextSenha(JPasswordField TextSenha) {
+        this.TextSenha = TextSenha;
+    }
+
+    public JTextField getTextUsuario() {
+        return TextUsuario;
+    }
+
+    public void setTextUsuario(JTextField TextUsuario) {
+        this.TextUsuario = TextUsuario;
+    }
+    
+    
 }
