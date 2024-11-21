@@ -26,7 +26,7 @@ public class Main {
         System.out.println(usuario.getNome());  
         
         
-        Agendamento agendamento = new Agendamento(1, cliente, servico, 30, "28/12/2030 12:30"); 
+        Agendamento agendamento = new Agendamento(1, cliente, servico, 30, "28/12/2030");
         System.out.println(agendamento.getCliente().getNome()); 
     }
     
