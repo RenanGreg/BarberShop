@@ -160,7 +160,7 @@ public class Agenda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
 
-    /**
+    /**.
      * @param args the command line arguments
      */
     public static void main(String args[]) {

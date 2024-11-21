@@ -23,10 +23,14 @@ public class Agendamento {
         this.servico = servico;
         this.valor = valor;
         try {
-            this.data = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
+            this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
         } catch (ParseException ex) {
             Logger.getLogger(Agendamento.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public Agendamento(int i, Cliente cliente9, Servico servico6, int i0, String string, String string0, String cliente_vai_atrasar) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 
@@ -68,6 +72,14 @@ public class Agendamento {
 
     public void setData(Date data) {
         this.data = data;
+    } 
+    
+    public String getDataFormatada(){
+        return new SimpleDateFormat("dd/MM/yyyy").format(data);
+    } 
+    
+    public String getHoraFormatada(){
+       return new SimpleDateFormat("HH:mm").format(data);
     }
 
     public String getObservacao() {
@@ -77,8 +89,4 @@ public class Agendamento {
     public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
-    
-    
-    
-    
 }

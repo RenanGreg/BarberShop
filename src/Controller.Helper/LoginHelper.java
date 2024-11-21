@@ -25,7 +25,8 @@ public class LoginHelper {
         String nome = modelo.getNome();
         String senha = modelo.getSenha(); 
         
-        view.getUsuario().set.Text(""); 
+        view.getTextUsuario().setText(""); 
         view.getTextSenha().setText("");
-    }
+   }
+    
 }

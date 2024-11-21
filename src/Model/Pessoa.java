@@ -27,7 +27,7 @@ abstract public class Pessoa {
         this.sexo = sexo;
         String data = null;
         try {
-            this.dataNascimento = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
+            this.dataNascimento = new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimento); 
         } catch (ParseException ex) {
             Logger.getLogger(Pessoa.class.getName()).log(Level.SEVERE, null, ex);
         }
