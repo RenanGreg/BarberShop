@@ -4,7 +4,7 @@ import Model.Usuario;
 import View.Login;
 
 
-public class LoginHelper { 
+public class LoginHelper implements IHelper { 
     
     private final Login view; 
 
@@ -28,5 +28,10 @@ public class LoginHelper {
         view.getTextUsuario().setText(""); 
         view.getTextSenha().setText("");
    }
+
+    @Override
+    public void limparTela() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

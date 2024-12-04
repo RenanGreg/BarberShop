@@ -30,7 +30,7 @@ public class Agendamento {
     }
 
     public Agendamento(int i, Cliente cliente9, Servico servico6, int i0, String string, String string0, String cliente_vai_atrasar) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 

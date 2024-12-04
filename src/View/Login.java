@@ -81,7 +81,7 @@ public class Login extends javax.swing.JFrame {
                 BotaoEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(BotaoEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 580, 90, 30));
+        getContentPane().add(BotaoEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 580, 140, 30));
 
         LOGIN.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         LOGIN.setText("LOGIN");
