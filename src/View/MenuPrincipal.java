@@ -19,6 +19,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
+        setExtendedState(MAXIMIZED_BOTH); 
         initComponents();
         this.controller = new MenuPrincipalController(this);
     }

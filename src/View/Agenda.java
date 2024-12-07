@@ -8,9 +8,11 @@ import javax.swing.JTextField;
 public class Agenda extends javax.swing.JFrame {
 
     private final AgendaController controller;
+    public String getTextValor;
 
     
     public Agenda() {
+        setExtendedState(MAXIMIZED_BOTH); 
         initComponents();
         controller = new AgendaController(this);
         Iniciar(); 
@@ -21,14 +23,14 @@ public class Agenda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField2 = new javax.swing.JTextField();
+        TextObservacao = new javax.swing.JTextField();
         JComboBoxServico = new javax.swing.JComboBox<>();
         JComboBoxCliente = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         TextValor = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        TextHora = new javax.swing.JTextField();
+        TextData = new javax.swing.JTextField();
         jTextField = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -37,18 +39,18 @@ public class Agenda extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         TabelaAgendamentos = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        TextId = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        TextObservacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                TextObservacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 250, 50));
+        getContentPane().add(TextObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 250, 50));
 
         JComboBoxServico.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -70,13 +72,13 @@ public class Agenda extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 200, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 170, -1));
 
-        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("OBSERVAÇÃO");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 120, 30));
 
         TextValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,19 +87,19 @@ public class Agenda extends javax.swing.JFrame {
         });
         getContentPane().add(TextValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 160, -1));
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        TextHora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                TextHoraActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 160, -1));
+        getContentPane().add(TextHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 160, -1));
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        TextData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                TextDataActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 160, -1));
+        getContentPane().add(TextData, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 160, -1));
 
         jTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextField.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,19 +146,19 @@ public class Agenda extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(TabelaAgendamentos);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 660, 100));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 660, 100));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ID");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 30, 40));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        TextId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                TextIdActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 160, -1));
+        getContentPane().add(TextId, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 160, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/projeto-barbearia-3.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -38, 1330, 930));
@@ -164,17 +166,17 @@ public class Agenda extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void TextIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_TextIdActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void TextHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextHoraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_TextHoraActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void TextDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextDataActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_TextDataActionPerformed
 
     private void TextValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextValorActionPerformed
         // TODO add your handling code here:
@@ -188,9 +190,9 @@ public class Agenda extends javax.swing.JFrame {
         this.controller.atualizaValor();
     }//GEN-LAST:event_JComboBoxServicoItemStateChanged
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void TextObservacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextObservacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_TextObservacaoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.controller.Agendar();
@@ -235,6 +237,10 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> JComboBoxCliente;
     private javax.swing.JComboBox<String> JComboBoxServico;
     private javax.swing.JTable TabelaAgendamentos;
+    private javax.swing.JTextField TextData;
+    private javax.swing.JTextField TextHora;
+    private javax.swing.JTextField TextId;
+    private javax.swing.JTextField TextObservacao;
     private javax.swing.JTextField TextValor;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -246,17 +252,13 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel jTextField;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 
     private void Iniciar() {
         this.controller.atualizaTabela();
         this.controller.atualizaCliente();
         this.controller.atualizaServico(); 
-         this.controller.atualizaValor(); 
+        this.controller.atualizaValor(); 
     } 
 
     public JTable getTabelaAgendamentos() {
@@ -290,7 +292,47 @@ public class Agenda extends javax.swing.JFrame {
     public void setTextValor(JTextField TextValor) {
         this.TextValor = TextValor;
     }
-    
-    
+
+    public JTextField getTextHoraFormatada() {
+        return TextHora;
+    }
+
+    public void setTextHoraFormatada(JTextField TextHora) {
+        this.TextHora = TextHora;
+    }
+
+    public JTextField getTextId() {
+        return TextId;
+    }
+
+    public void setTextId(JTextField TextId) {
+        this.TextId = TextId;
+    }
+
+    public JTextField getTextObservacao() {
+        return TextObservacao;
+    }
+
+    public void setTextObservacao(JTextField TextObservacao) {
+        this.TextObservacao = TextObservacao;
+    }
+
+    public JTextField getTextDataFormatada() {
+        return TextData;
+    }
+
+    public void setTextDataFormatada(JTextField TextData) {
+        this.TextData = TextData;
+    }
+
+    public class getText {
+
+        public getText() {
+        }
+    }
+
+   
+
+   
     
 }

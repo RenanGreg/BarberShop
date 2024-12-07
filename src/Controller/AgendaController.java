@@ -1,5 +1,6 @@
 package Controller;
 
+
 import Controller.Helper.AgendaHelper;
 import Model.Agendamento;
 import Model.Cliente;
@@ -62,6 +63,14 @@ public class AgendaController {
     
     public void Agendar(){
       //Buscar objeto agendamento da tela
+     Agendamento agendamento = helper.obterModelo();
+     
       // Salvar Objeto no banco de dados 
+      new AgendamentoDAO().insert(agendamento); 
+      
+      // inserir elemento na tabela 
+      
+      atualizaTabela();
+      helper.limparTela();
     }
 }

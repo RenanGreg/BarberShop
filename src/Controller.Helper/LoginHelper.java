@@ -1,5 +1,6 @@
 package Controller.Helper;
 
+import Controller.IHelper;
 import Model.Usuario;
 import View.Login;
 
@@ -33,5 +34,5 @@ public class LoginHelper implements IHelper {
     public void limparTela() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+   
 }

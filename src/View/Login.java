@@ -25,7 +25,8 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-    public Login() {
+    public Login() { 
+        setExtendedState(MAXIMIZED_BOTH); 
         initComponents();
         controller = new LoginController(this); 
         try {
@@ -168,6 +169,10 @@ public class Login extends javax.swing.JFrame {
 
     public void setTextUsuario(JTextField TextUsuario) {
         this.TextUsuario = TextUsuario;
+    }
+
+    public int getTextId() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

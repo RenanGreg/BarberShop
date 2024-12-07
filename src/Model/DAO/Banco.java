@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model.DAO;
 
 import Model.Agendamento;
@@ -57,7 +52,7 @@ public class Banco {
 
         Agendamento agendamento1 = new Agendamento(9, cliente9, servico6, 0, "28/11/2023");
         Agendamento agendamento2 = new Agendamento(2, cliente3, servico1, 0, "28/11/2023");
-        Agendamento agendamento3 = new Agendamento(4, cliente5, servico3, 0, "28/11/2023");
+        Agendamento agendamento3 = new Agendamento(4, cliente5, servico3, 0, "28/11/2023"); 
 
      
         //Adiciona Elementos na lista

@@ -1,10 +1,10 @@
-package Controller.Helper;
+package Controller;
 
-
-public interface IHelper {
+ public interface IHelper {
     
+   
     public abstract Object obterModelo(); 
     
     public abstract void limparTela();
     
-}
+} 

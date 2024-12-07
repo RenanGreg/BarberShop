@@ -23,15 +23,31 @@ public class Agendamento {
         this.servico = servico;
         this.valor = valor;
         try {
-            this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+            this.data = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
         } catch (ParseException ex) {
-            Logger.getLogger(Agendamento.class.getName()).log(Level.SEVERE, null, ex);
+            try {
+                this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+            } catch (ParseException ex2) {
+                Logger.getLogger(Agendamento.class.getName())
+                      .log(Level.SEVERE, "Erro ao converter a data: {0}", data);
+                this.data = null;
         }
     }
+}
 
-    public Agendamento(int i, Cliente cliente9, Servico servico6, int i0, String string, String string0, String cliente_vai_atrasar) {
+    public Agendamento(int id, Cliente cliente, Servico servico, float valor, String data, String oservacao) {
+        this(id, cliente, servico, valor, data);
+        this.observacao = observacao; 
+    }
+    
+    
+
+    
+
+    public Agendamento(int id, Cliente cliente, Servico servico, String dataHora, String observacao, float valor) {
         
     }
+   
     
 
     public int getId() {
