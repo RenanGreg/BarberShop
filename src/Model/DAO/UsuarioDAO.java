@@ -1,13 +1,14 @@
-
 package Model.DAO;
 
 import Model.Usuario;
 import java.util.ArrayList;
 
-
 public class UsuarioDAO {
     
-    
+    /**
+     * Insere um usuario dentro do banco de dados
+     * @param usuario exige que seja passado um objeto do tipo usuario
+     */
     public void insert(Usuario usuario){
         Banco.usuario.add(usuario);
     }

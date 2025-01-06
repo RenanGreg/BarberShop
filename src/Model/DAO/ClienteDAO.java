@@ -1,9 +1,7 @@
-
 package Model.DAO;
 
 import Model.Cliente;
 import java.util.ArrayList;
-
 
 public class ClienteDAO {
     

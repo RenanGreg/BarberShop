@@ -6,16 +6,14 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-public class Agendamento { 
+public class Agendamento {
     
-    private int id; 
-    private Cliente cliente; 
-    private Servico servico;
-    private float valor; 
-    private Date data; 
-    private String observacao; 
-    
+    private int id;
+    Cliente cliente;
+    Servico servico;
+    float valor;
+    Date data;
+    String observacao;
 
     public Agendamento(int id, Cliente cliente, Servico servico, float valor, String data) {
         this.id = id;
@@ -25,30 +23,15 @@ public class Agendamento {
         try {
             this.data = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
         } catch (ParseException ex) {
-            try {
-                this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
-            } catch (ParseException ex2) {
-                Logger.getLogger(Agendamento.class.getName())
-                      .log(Level.SEVERE, "Erro ao converter a data: {0}", data);
-                this.data = null;
+            Logger.getLogger(Agendamento.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-}
-
-    public Agendamento(int id, Cliente cliente, Servico servico, float valor, String data, String oservacao) {
+    
+    public Agendamento(int id, Cliente cliente, Servico servico, float valor, String data, String observacao)
+    {
         this(id, cliente, servico, valor, data);
-        this.observacao = observacao; 
+        this.observacao = observacao;
     }
-    
-    
-
-    
-
-    public Agendamento(int id, Cliente cliente, Servico servico, String dataHora, String observacao, float valor) {
-        
-    }
-   
-    
 
     public int getId() {
         return id;
@@ -57,7 +40,7 @@ public class Agendamento {
     public void setId(int id) {
         this.id = id;
     }
-
+    
     public Cliente getCliente() {
         return cliente;
     }
@@ -85,17 +68,17 @@ public class Agendamento {
     public Date getData() {
         return data;
     }
-
-    public void setData(Date data) {
-        this.data = data;
-    } 
     
     public String getDataFormatada(){
         return new SimpleDateFormat("dd/MM/yyyy").format(data);
-    } 
+    }
     
     public String getHoraFormatada(){
-       return new SimpleDateFormat("HH:mm").format(data);
+        return new SimpleDateFormat("HH:mm").format(data);
+    }
+    
+    public void setData(Date data) {
+        this.data = data;
     }
 
     public String getObservacao() {
@@ -105,4 +88,6 @@ public class Agendamento {
     public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
-}
+
+    
+} 

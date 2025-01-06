@@ -1,38 +1,39 @@
 package Controller.Helper;
 
-import Controller.IHelper;
 import Model.Usuario;
 import View.Login;
 
+public class LoginHelper implements IHelper{
 
-public class LoginHelper implements IHelper { 
-    
-    private final Login view; 
+    private final Login view;
 
     public LoginHelper(Login view) {
         this.view = view;
     }
     
+    @Override
     public Usuario obterModelo(){
         
-    String nome = view.getTextUsuario().getText(); 
-        String senha = view.getTextSenha().getText(); 
+        String nome = view.getTextUsuario().getText();
+        String senha = view.getTextSenha().getText();
+        Usuario modelo = new Usuario(0, nome, senha);
         
-        Usuario modelo = new Usuario(0, nome, senha); 
         return modelo;
     }
     
     public void setarModelo(Usuario modelo){
         String nome = modelo.getNome();
-        String senha = modelo.getSenha(); 
+        String senha = modelo.getSenha();
         
-        view.getTextUsuario().setText(""); 
-        view.getTextSenha().setText("");
-   }
-
-    @Override
-    public void limparTela() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        view.getTextUsuario().setText(nome);
+        view.getTextSenha().setText(senha);
     }
-   
+    
+    @Override
+    public void limparTela(){
+        view.getTextUsuario().setText("");
+        view.getTextSenha().setText("");
+    }
+
+    
 }

@@ -1,4 +1,3 @@
-
 package Model.DAO;
 
 import Model.Agendamento;
@@ -7,7 +6,10 @@ import java.util.ArrayList;
 
 public class AgendamentoDAO {
     
-    
+    /**
+     * Insere um agendamento dentro do banco de dados
+     * @param agendamento exige que seja passado um objeto do tipo agendamento
+     */
     public void insert(Agendamento agendamento){
           
         if(agendamento.getId() == 0){
@@ -18,9 +20,11 @@ public class AgendamentoDAO {
         
     }
     
-    
-    
-    
+    /**
+     * Atualiza um Objeto no banco de dados
+     * @param agendamento
+     * @return 
+     */
     public boolean update(Agendamento agendamento){
         
         for (int i = 0; i < Banco.agendamento.size(); i++) {
@@ -80,6 +84,10 @@ public class AgendamentoDAO {
         }
         
         return maiorId + 1;
+    }
+
+    public void insert(Object[] agendamento) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

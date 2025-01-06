@@ -1,48 +1,42 @@
 package Controller;
 
 import Controller.Helper.LoginHelper;
+import Model.DAO.Banco;
 import Model.DAO.UsuarioDAO;
 import Model.Usuario;
 import View.Login;
 import View.MenuPrincipal;
 
 
-public class LoginController { 
+public class LoginController {
     
-    private final Login view;
-    private final LoginHelper helper;
+    private Login view;
+    private LoginHelper helper;
 
     public LoginController(Login view) {
-        this.view = view; 
+        this.view = view;
         this.helper = new LoginHelper(view);
+        Banco.inicia(); //comando para iniciar o banco de dados
     }
     
-    public void entrarNoSistema(){ 
+    public void entrarNoSistema(){
+    
+        //Pegar Usuario da View        
+        Usuario usuarioNaoAutenticado = helper.obterModelo(); //depurar aqui
         
-        //pegar usuario da View
-        Usuario usuario = helper.obterModelo();
-        
-        //pesquisa Usuario no banco.
+        //Pesquisa Usuario no Banco
         UsuarioDAO usuarioDAO = new UsuarioDAO();
-        Usuario usuarioAutentificado = usuarioDAO.selectPorNomeESenha(usuario);
+        Usuario usuarioAutenticado = usuarioDAO.selectPorNomeESenha(usuarioNaoAutenticado);
         
-        
-        if (usuarioAutentificado != null){
-            MenuPrincipal menu = new MenuPrincipal(); 
-            menu.setVisible(true);
-            this.view.dispose();
+        //Se o usuario da view tiver mesmo usuario e senha que o usuario vindo do banco direcionar para menu principal
+        if(usuarioAutenticado != null){
             
+            MenuPrincipal menuPrincipal = new MenuPrincipal();
+            menuPrincipal.setVisible(true);
+            this.view.dispose(); //fecha a view atual
+        }else{
+            this.view.exibeMensagem("Usuario ou senha incorretos");
         }
-       else{
-            view.exibeMensagem("Usuario ou senha invalidos"); 
-        }
-    
+         
     }
-    
-    public void FizTarefa(){
-        System.out.println("Busquei algo");
-        
-        this.view.exibeMensagem("Executei o fiz tarefa");
-    }
-    
 }

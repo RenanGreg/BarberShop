@@ -1,17 +1,10 @@
-package Model; 
+package Model;
 
 
-public class Cliente extends Pessoa{ 
+public class Cliente extends Pessoa{
     
-   
-    private String endereco; 
-    private String cep; 
-
-    public Cliente(int id, String nome, char sexo, String dataNascimento, String telefone, String email, String rg, String endereco, String cep) {
-        super(id, nome, sexo, dataNascimento, telefone, email, rg);
-        this.endereco = endereco;
-        this.cep = cep;
-    }
+    private String endereco;
+    private String cep;
 
     public Cliente(int id, String nome, String endereco, String cep) {
         super(id, nome);
@@ -19,9 +12,12 @@ public class Cliente extends Pessoa{
         this.cep = cep;
     }
     
-    
-    
-    
+    public Cliente(int id, String nome, char sexo, String dataNascimento, String telefone, String email, String rg, String endereco, String cep) {
+        super(id, nome, sexo, dataNascimento, telefone, email, rg);
+        this.endereco = endereco;
+        this.cep = cep;
+    }
+
     public String getEndereco() {
         return endereco;
     }
@@ -36,10 +32,10 @@ public class Cliente extends Pessoa{
 
     public void setCep(String cep) {
         this.cep = cep;
-    } 
-    
-    @Override 
-    public String toString(){
+    }
+
+    @Override
+    public String toString() {
         return getNome();
     }
-}   
+}

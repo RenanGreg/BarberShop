@@ -1,23 +1,30 @@
 package Model;
 
 
-public class Usuario extends Pessoa { 
-    
-   
-    protected String senha;
-    protected String nivelAcesso; 
+public class Usuario extends Pessoa{
 
+    private String senha;
+    private String nivelAcesso;
+
+    
+    public Usuario(int id, String nome, char sexo, String dataNascimento, String telefone, String email, String rg, String senha, String nivelAcesso) {
+        super(id, nome, sexo, dataNascimento, telefone, email, rg);
+        this.senha = senha;
+        this.nivelAcesso = nivelAcesso;
+    }
+
+    public Usuario(int id, String nome, String senha, String nivelAcesso) {
+        super(id, nome);
+        this.senha = senha;
+        this.nivelAcesso = nivelAcesso;
+    }
+    
     public Usuario(int id, String nome, String senha) {
         super(id, nome);
         this.senha = senha;
     }
-
-    public Usuario(int id, String nome, char sexo, String dataNascimento, String telefone, String email, String rg, String senha, String nivelAcesso){
-
-        super(id, nome, sexo, dataNascimento, telefone, email, rg); 
-        this.senha = senha;
-        this.nivelAcesso = nivelAcesso;
-    }
+    
+    
 
     public String getSenha() {
         return senha;
@@ -33,15 +40,5 @@ public class Usuario extends Pessoa {
 
     public void setNivelAcesso(String nivelAcesso) {
         this.nivelAcesso = nivelAcesso;
-    }
-    
-    
-
-
- 
-    
-    
-    
-    
-    
+    } 
 }

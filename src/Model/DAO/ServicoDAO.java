@@ -1,9 +1,7 @@
-
 package Model.DAO;
 
 import Model.Servico;
 import java.util.ArrayList;
-
 
 public class ServicoDAO {
     

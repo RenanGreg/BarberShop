@@ -2,32 +2,62 @@ package View;
 
 import Model.Agendamento;
 import Model.Cliente;
+import Model.DAO.Banco;
+import Model.DAO.UsuarioDAO;
 import Model.Servico;
 import Model.Usuario;
+import java.util.ArrayList;
 
 
-public class Main { 
-    public static void main (String[] args){
+public class Main {
+    
+    
+    public static void main(String[] args){
+      
+        String nome = "tiago";
+        System.out.println(nome);
         
-        String nome = "Renan"; 
-        System.out.println(nome); 
+        Servico corte = new Servico(1, "corte", 30);
         
-        Servico servico = new Servico(1, "barba", 30);
-        
-        System.out.println(servico.getDescricao());
-        System.out.println(servico.getValor()); 
-        
-        
-        Cliente cliente = new Cliente(1, "Renan,", "Rua Rogerio Ceni", "4354564"); 
-        System.out.println(cliente.getNome());  
+        System.out.println(corte.getDescricao());
+        System.out.println(corte.getValor());
         
         
-        Usuario usuario = new Usuario(1, "Barbeiro", "senha");
-        System.out.println(usuario.getNome());  
+        Usuario tiago = new Usuario(1, "tiago", 'M', "09/05/1996", "92408407", "tiagoluz.h607@gmail.com", "24578874", "123456", "administrador");
+        System.out.println(tiago.getNome());
+        System.out.println(tiago.getDataNascimento()); //debugar aqui
+        
+        Cliente link = new Cliente(1, "tiago", 'M', "09/05/1996", "92408407", "tiagoluz.h607@gmail.com", "24578874","Rua teste 654 canudos", "95478452");
+        System.out.println(link.getNome());
+        System.out.println(link.getDataNascimento()); //debugar aqui
+        
+        //Nao consigo estanciar a classe é abstrata
+        //Pessoa pessoinha = new Pessoa(1, "capirotin");
+        //System.out.println(pessoinha.getNome());
         
         
-        Agendamento agendamento = new Agendamento(1, cliente, servico, 30, "28/12/2030");
-        System.out.println(agendamento.getCliente().getNome()); 
-    }
+        //--------------------- Criando Um Agendamento -----------------------------------------------------
+        Agendamento agendamento = new Agendamento(1, link, corte, 30, "09/07/2018 23:51");
+        System.out.println(agendamento.getCliente().getNome()); //debugar aqui
+        System.out.println(agendamento.getData());
+        
+        
+        Banco.inicia();
+        
+        //Testando DAO
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        usuarioDAO.insert(tiago);
+        ArrayList<Usuario> usuarios = usuarioDAO.selectAll();
+        tiago.setNome("tiago luz");
+        usuarioDAO.update(tiago);
+        usuarios = usuarioDAO.selectAll();
+        usuarioDAO.delete(tiago);
+        usuarios = usuarioDAO.selectAll();
+        
+        
+        
+        
+   }
+    
     
 }
